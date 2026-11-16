@@ -14,7 +14,7 @@ use Psr\Http\Message\{
     StreamInterface,
     UriInterface
 };
-use G\Http\Client\Handlers\{CurlHandler, HandlerInterface};
+use G\Http\Client\Handler\{CurlHandler, HandlerInterface};
 
 /**
  * PSR-18 HTTP client.

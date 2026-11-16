@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace G\Http\Client\Handlers;
+namespace G\Http\Client\Handler;
 
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Message\{RequestInterface, ResponseInterface};
