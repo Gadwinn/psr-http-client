@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace G\Http\Client\Tests;
 
 use G\Http\Client\Client;
-use G\Http\Client\Handlers\CurlHandler;
-use G\Http\Client\Handlers\HandlerInterface;
+use G\Http\Client\Handler\CurlHandler;
+use G\Http\Client\Handler\HandlerInterface;
 use G\Http\Client\Tests\Fixtures\Factory;
 use G\Http\Client\Tests\Fixtures\Stream;
 use G\Http\Client\Tests\Fixtures\Uri;

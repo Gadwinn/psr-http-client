@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace G\Http\Client\Tests\Handlers;
+namespace G\Http\Client\Tests\Handler;
 
 use CurlHandle;
-use G\Http\Client\Handlers\CurlHandler;
+use G\Http\Client\Handler\CurlHandler;
 use G\Http\Client\Tests\Fixtures\Request;
 use G\Http\Client\Tests\Fixtures\Response;
 use G\Http\Client\Tests\Fixtures\Uri;
