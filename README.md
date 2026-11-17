@@ -79,9 +79,9 @@ As required by PSR-18, an HTTP error status is **not** an exception: a `404` or 
 
 | Exception | Implements | When |
 |---|---|---|
-| `G\Http\Client\Exceptions\RequestException` | `RequestExceptionInterface` | The request is invalid (malformed URL, scheme other than http/https) |
-| `G\Http\Client\Exceptions\NetworkException` | `NetworkExceptionInterface` | Network failure: DNS, connection, TLS, timeout… |
-| `G\Http\Client\Exceptions\ClientException` | `ClientExceptionInterface` | Parent of both; also thrown when the response cannot be parsed |
+| `G\Http\Client\Exception\RequestException` | `RequestExceptionInterface` | The request is invalid (malformed URL, scheme other than http/https) |
+| `G\Http\Client\Exception\NetworkException` | `NetworkExceptionInterface` | Network failure: DNS, connection, TLS, timeout… |
+| `G\Http\Client\Exception\ClientException` | `ClientExceptionInterface` | Parent of both; also thrown when the response cannot be parsed |
 
 Every exception gives the request back with `getRequest()`; the code and message are those of cURL.
 
@@ -110,7 +110,7 @@ try {
 Pass extra cURL options to the handler: timeouts, proxy, CA bundle, user agent…
 
 ```php
-use G\Http\Client\Handlers\CurlHandler;
+use G\Http\Client\Handler\CurlHandler;
 
 $handler = new CurlHandler([
     CURLOPT_CONNECTTIMEOUT => 5,   // default: 60
@@ -126,10 +126,10 @@ The options the handler needs to build the response cannot be overridden: URL, m
 
 ### Custom handler
 
-Implement `G\Http\Client\Handlers\HandlerInterface` to replace the transport (another extension, a fake for your tests…). The handler receives the request and an empty response with a writable body, and returns the filled response.
+Implement `G\Http\Client\Handler\HandlerInterface` to replace the transport (another extension, a fake for your tests…). The handler receives the request and an empty response with a writable body, and returns the filled response.
 
 ```php
-use G\Http\Client\Handlers\HandlerInterface;
+use G\Http\Client\Handler\HandlerInterface;
 use Psr\Http\Message\{RequestInterface, ResponseInterface};
 
 final class FakeHandler implements HandlerInterface
@@ -152,3 +152,7 @@ The functional tests start a local PHP built-in server (`tests/Fixtures/server.p
 ```bash
 composer test-all
 ```
+
+## License
+
+MIT, see [LICENSE](LICENSE).

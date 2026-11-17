@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace G\Http\Client\Handlers;
+namespace G\Http\Client\Handler;
 
 use Psr\Http\Message\{RequestInterface, ResponseInterface};
-use G\Http\Client\Exceptions\{ClientException, NetworkException, RequestException};
+use G\Http\Client\Exception\{ClientException, NetworkException, RequestException};
 use CurlHandle;
 use InvalidArgumentException;
 
