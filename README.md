@@ -152,3 +152,7 @@ The functional tests start a local PHP built-in server (`tests/Fixtures/server.p
 ```bash
 composer test-all
 ```
+
+## License
+
+MIT, see [LICENSE](LICENSE).
